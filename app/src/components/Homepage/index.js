@@ -8,6 +8,7 @@ import {
     useGetCryptoHistoryQuery
 } from '../../redux/services/cryptoAPI';
 import Cryptocurrencies from '../Cryptocurrencies'
+import News from '../News';
 import  {Link} from 'react-router-dom'
 import Loader from '../Loader'
 const {Title} = Typography;
@@ -19,7 +20,7 @@ function HomePage() {
     const {data, isFetching} = useGetCryptosQuery(10);
     const stats  = data?.data?.stats;
     if(!isFetching) {
-        console.log(data);
+        // console.log(data);
     }
 
     // if (isFetching) return <Loader />;
@@ -45,8 +46,11 @@ function HomePage() {
                 <Title level={2} className="home-title">Latest Crypto News</Title>
                 <Title level={3} className="show-more"><Link>Show more</Link></Title>
             </div>
+            
         </div>
     )
 }
 
 export default HomePage
+
+// <News simplified/>

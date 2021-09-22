@@ -19,16 +19,9 @@ function Cryptocurrencies({simplified}) {
     }, [cryptosList, searchTerm]);
 
     useEffect(() => {
-        console.log(isFetching);
         setCryptos(cryptosList.data.coins);
     },[isFetching]);
-    // if(!isFetching ) {
-    //     console.log("done");
-    //     console.log("old coins", cryptos);
-    //     setCryptos(cryptosList.data.coins);
-    //     // console.log("new List",cryptosList.data.coins);
-    //     console.log("new coins", cryptos);
-    // }
+    
 
     if (isFetching) return <Loader />;
 
