@@ -21,3 +21,17 @@
 .logo a{
     color: white;
 }
+
+.menu-control-container {
+    display: none;
+}
+
+@media only screen and (max-width: 800px) {
+    .nav-desktop {
+        display: none;
+    }
+
+    .menu-control-container{
+        display: block !important;
+    }
+}

@@ -1,0 +1,30 @@
+.sidebar {
+    position: fixed;
+    top: 0 !important;
+    left: 0 !important;
+    width: 250px;
+    z-index: 200;
+    background-color:rgb(0, 21, 41);;
+    height: 100%;
+    /* padding-top: 8rem */
+    transition: 0.3s all ease-in-out;
+}
+
+
+.sidebar-navbrand {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+}
+
+@media screen and (max-width:800px) {
+    .sidebar {
+        position: fixed;
+        top: 0 !important;
+        left: 0 !important;
+    }
+    
+}
+
+.sidebaar-close {
+    left: -100% !important;
+}

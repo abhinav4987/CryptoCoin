@@ -37,6 +37,7 @@ a:hover{
 }
 .nav-container{
     position: fixed;
+    top: 0;
     left: 0;
     margin: 10px;
     height: 100vh;
@@ -51,11 +52,17 @@ a:hover{
     align-items: center;
     width: 100%;
 }
+
+.ant-avatar-image {
+    width: 50px !important;
+    height: 50px !important;
+}
+
 .logo{
     margin:0 0 0 15px;
 }
 .logo a{
-   color: white;
+   color: white !important;
 }
 .menu-control-container{
     display: none !important;
@@ -63,6 +70,7 @@ a:hover{
     right: 10px !important;
     top: 25px !important;
     font-size: 1.2rem !important;
+    
     background-color: var(--bgSecondary) !important;
     border: none !important;
 }
@@ -121,10 +129,10 @@ a:hover{
         display: block !important;
     }
 
-    .ant-menu{
+    /* .ant-menu{
         position: absolute;
         right: 0px;
-    }
+    } */
     .home-title{
         font-size: 1.4rem !important;
     }

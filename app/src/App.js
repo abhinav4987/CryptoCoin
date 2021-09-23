@@ -1,18 +1,30 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {
     Switch, Route, Link
 } from 'react-router-dom';
 import {
     Layout, Typography, Space
 } from 'antd';
-import {Navbar, Exchanges, Homepage, Cryptocurrencies, CryptoDetails, News} from './components';
+import {Navbar,SideBar, Exchanges,BackDrop, Homepage, Cryptocurrencies, CryptoDetails, News} from './components';
+
 import './App.css'
 
 
 const App = () => {
+    
+    const [sideOpen, setSideOpen] = useState(false);
+
+    const toggleSideMenu = () => {
+        setSideOpen(!sideOpen);
+    }
+    
     return (
+        <>
+        <SideBar sideOpen={sideOpen} toggle={toggleSideMenu} />
+        <BackDrop sideOpen={sideOpen} toggle={toggleSideMenu} />
         <div className="app">
-            <div className="navbar"><Navbar /></div>
+            
+            <div className="navbar"><Navbar toggle={toggleSideMenu} /></div>
             <div className="main">
                 <Layout>
                     <div className="routes">
@@ -50,6 +62,7 @@ const App = () => {
             </div>
             
         </div>
+        </>
     )
 }
 
