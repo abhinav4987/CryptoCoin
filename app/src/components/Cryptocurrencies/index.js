@@ -23,7 +23,13 @@ function Cryptocurrencies({simplified}) {
         setCryptos(cryptosList.data.coins);
     },[isFetching]);
     
-
+   
+    const onChange = (e) => {
+        console.log("fetching") 
+        setSearchTerm(e.target.value.toLowerCase());
+        const filteredData = cryptosList.data.coins.filter((item) => item.name.toLowerCase().includes(searchTerm));
+        setCryptos(filteredData);
+    }
     if (isFetching) return <Loader />;
 
 
@@ -32,7 +38,7 @@ function Cryptocurrencies({simplified}) {
             {
                 !simplified && (
                     <div className="cryptocurrency-search">
-                        <Input placeHolder="Search Cryptocurrency" onChnage={(e) => setSearchTerm(e.target.value.toLowerCase())}></Input>
+                        <Input placeHolder="Search Cryptocurrency" onChange={onChange}></Input>
                     </div>
                 )
             }

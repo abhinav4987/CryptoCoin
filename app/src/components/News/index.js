@@ -56,7 +56,7 @@ function News({simplified}) {
                             <div className="provider-container">
                                 <div>
                                 <Avatar 
-                                    src={news.provider[0].image.thumbnail.contentUrl || demoImage} 
+                                    src={news.image.thumbnail.contentUrl || demoImage} 
                                     alt="news"
                                 />
                                     <Text className="provider-name">{news.provider[0].name}</Text>
